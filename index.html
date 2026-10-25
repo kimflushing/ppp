@@ -12,219 +12,408 @@
 html{overflow-x:auto}
 body{margin:0;background:#e7e9ed;color:var(--ink);font-family:'Noto Sans KR',sans-serif;overflow-x:auto}
 button,input,textarea,select{font:inherit}button{cursor:pointer}
-.toolbar{position:sticky;top:0;z-index:100;display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:8px;padding:12px;background:rgba(255,255,255,.96);border-bottom:1px solid #d7dce4;box-shadow:0 3px 12px #3543540b}
-.toolbar button,.button{border:1px solid var(--line);background:#fff;color:var(--ink);padding:9px 13px;border-radius:9px;font-size:12px;font-weight:700}
-.toolbar button.primary{background:var(--ink);color:white;border-color:var(--ink)}
-.toolbar button:hover,.button:hover{filter:brightness(.97)}
-.toolbar .status{font-size:11px;color:var(--muted);margin-left:8px}
-.page{width:100%;overflow-x:auto;padding:28px 18px 60px}
-#sheet{width:1800px;max-width:none;margin:0 auto;background:var(--paper);padding:38px;box-shadow:0 15px 55px #27364b18;min-height:100vh}
-.header{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;border-bottom:2px solid var(--ink);padding-bottom:22px;margin-bottom:25px}
-.eyebrow{font-family:Montserrat,sans-serif;font-size:10px;letter-spacing:3px;font-weight:800;color:var(--muted);margin-bottom:9px}
-h1{font-family:Montserrat,'Noto Sans KR',sans-serif;font-size:34px;line-height:1.1;margin:0;font-weight:800;letter-spacing:-1px}
-.subtitle{font-size:12px;color:var(--muted);margin-top:10px}
-.header-note{font-size:10px;line-height:1.8;text-align:right;color:var(--muted);letter-spacing:1px}
-.section{margin:24px 0}
-.section-head{display:flex;align-items:center;gap:10px;margin-bottom:13px}
-.section-no{font-family:Montserrat,sans-serif;font-size:11px;font-weight:800;color:white;background:var(--ink);border-radius:5px;padding:5px 7px}
-.section-title{font-size:14px;font-weight:800;letter-spacing:.4px}
-.section-sub{font-size:10px;color:var(--muted);margin-left:auto}
-.profile-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
-.profile-card{border:1px solid var(--line);border-radius:12px;overflow:hidden;min-width:0;background:white}
-.profile-top{padding:12px 15px;background:var(--soft);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
-.profile-label{font-family:Montserrat,sans-serif;font-size:12px;font-weight:800;letter-spacing:1px}
-.profile-tag{font-size:10px;color:var(--muted)}
-.profile-fields{padding:14px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.field{min-width:0}
-.field.full{grid-column:1/-1}
-.field label{display:block;font-size:10px;font-weight:700;color:var(--muted);margin-bottom:5px}
-.field input,.field textarea,.field select{width:100%;min-width:0;border:1px solid var(--line);border-radius:7px;padding:9px;background:#fff;color:var(--ink);font-size:11px;outline:none}
-.field textarea{resize:vertical;min-height:64px}
-.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--point)}
-.material-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
-.material-card{border:1px solid var(--line);border-radius:12px;overflow:hidden;min-width:0}
-.material-head{padding:12px 15px;background:var(--soft);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
-.material-head strong{font-size:12px}
-.material-head span{font-size:10px;color:var(--muted)}
-.material-body{padding:14px}
-.material-slots{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.material-slot{min-width:0}
-.slot-title{font-size:10px;font-weight:700;color:var(--muted);margin-bottom:7px}
-.image-box{position:relative;width:100%;aspect-ratio:1/1;background:#f6f7f9;border:1px dashed #c5ceda;border-radius:9px;overflow:hidden;display:flex;align-items:center;justify-content:center}
-.image-box img{display:block;width:100%;height:100%;object-fit:contain}
-.image-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;color:#9aa6b5;font-size:10px;text-align:center;padding:10px}
-.image-placeholder strong{font-size:26px;font-weight:400;line-height:1}
-.image-input{display:block;width:100%;font-size:10px;margin-top:7px}
-.slot-actions{display:flex;justify-content:flex-end;margin-top:5px}
-.small-button{border:1px solid var(--line);background:white;border-radius:5px;padding:4px 7px;font-size:9px;color:var(--muted)}
-.nanagom-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
-.nanagom-card{border:1px solid var(--line);border-radius:12px;padding:14px;min-width:0}
-.nanagom-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
-.nanagom-head strong{font-size:12px}
-.nanagom-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.bond-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
-.bond-card{border:1px solid var(--line);border-radius:10px;padding:14px}
-.bond-title{font-size:11px;font-weight:800;margin-bottom:12px}
-.bond-row{display:flex;align-items:center;gap:10px}
-.bond-row input{width:100%;accent-color:var(--point)}
-.bond-value{font-family:Montserrat,sans-serif;font-size:11px;font-weight:800;min-width:34px;text-align:right}
-.notes-box{width:100%;min-height:100px;border:1px solid var(--line);border-radius:10px;padding:12px;font-size:11px;resize:vertical}
-.theme-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-.theme-item{border:1px solid var(--line);border-radius:9px;padding:11px;display:flex;align-items:center;gap:10px}
-.theme-item label{font-size:10px;font-weight:700;flex:1}
-.theme-item input[type=color]{width:34px;height:28px;border:0;padding:0;background:none}
-.footer{margin-top:35px;border-top:1px solid var(--line);padding-top:13px;display:flex;justify-content:space-between;color:var(--muted);font-family:Montserrat,sans-serif;font-size:9px;letter-spacing:1px}
-@media(max-width:900px){.page{padding:12px 0}#sheet{margin:0;padding:20px;width:1800px}.toolbar{position:relative}.toolbar .status{width:100%;text-align:center}.header{padding-bottom:15px}h1{font-size:28px}}
-@media print{body{background:white}.toolbar{display:none!important}.page{padding:0;overflow:visible}#sheet{width:100%;box-shadow:none;padding:20px}.editor-settings{display:none!important}}
+.toolbar{position:sticky;top:0;z-index:100;display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:8px;padding:12px;background:rgba(255,255,255,.96);border-bottom:1px solid #d7dce4;box-shadow:0 3px 12px #00000008}
+.toolbar-title{margin-right:12px;font-family:'Montserrat',sans-serif;font-weight:800;letter-spacing:2px}
+.toolbar button{padding:9px 15px;border:1px solid #d2d8e1;border-radius:8px;background:white;color:var(--ink);font-size:12px;font-weight:700}
+.toolbar button.primary{background:#354354;color:white;border-color:#354354}
+.toolbar button:hover{opacity:.75}
+.status{width:100%;text-align:center;color:#7c899a;font-size:11px}
+.editor-settings{width:min(1400px,calc(100% - 24px));margin:18px auto;padding:16px;background:white;border:1px solid #d9dee7;border-radius:12px}
+.editor-settings h3{margin:0 0 12px;font-size:13px}
+.settings-row{display:flex;align-items:center;flex-wrap:wrap;gap:16px}
+.color-setting{display:flex;align-items:center;gap:7px;font-size:12px}
+input[type=color]{width:35px;height:30px;padding:2px;background:white;border:1px solid var(--line);border-radius:6px;cursor:pointer}
+.small-help{margin-top:10px;color:var(--muted);font-size:11px;line-height:1.7}
+#sheet{width:1800px;max-width:none;margin:20px auto 40px;padding:28px;background:var(--paper);border:1px solid #d9dfe8;box-shadow:0 5px 30px #24344b0b;overflow:visible}
+.sheet-header{display:grid;grid-template-columns:1fr 1.2fr 1fr;align-items:center;gap:15px;padding:0 5px 22px}
+.brand{font-family:'Montserrat',sans-serif;font-size:12px;letter-spacing:3px;font-weight:600}
+.brand small{display:block;margin-top:5px;color:var(--muted);font-size:10px;letter-spacing:1px}
+.main-title{text-align:center}
+.main-title input{width:100%;padding:0;border:none;outline:none;background:transparent;color:var(--ink);text-align:center;font-family:'Montserrat',sans-serif;font-size:38px;font-weight:800;letter-spacing:3px}
+.main-title input::placeholder{color:#b5bdc8}
+.main-title textarea{width:100%;min-height:27px;resize:vertical;border:none;outline:none;background:transparent;text-align:center;color:var(--muted);font-size:12px}
+.header-meta{display:flex;justify-content:flex-end;gap:12px;font-size:10px;color:var(--muted)}
+.header-meta input{width:48px;border:none;border-bottom:1px solid var(--line);text-align:center;outline:none}
+.header-meta input.date{width:95px}
+.top-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:start}
+.relationship{margin-top:16px}.bond-grid-three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.panel{min-width:0;padding:14px;border:1px solid var(--line);border-radius:8px;background:white}
+.panel-heading{display:flex;align-items:center;gap:9px;margin:-1px -1px 11px;padding:8px 10px;border-radius:5px;background:var(--soft);font-size:13px;font-weight:700}
+.panel-heading .letter{display:grid;width:29px;height:29px;place-items:center;border-radius:5px;background:var(--accent-a);color:white;font-family:'Montserrat',sans-serif;font-size:16px}
+.character-b .letter{background:var(--accent-b)} .character-c .letter{background:var(--point)}
+.profile-top{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:12px;margin-bottom:10px;align-items:start}
+.character-b .profile-top{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)} .character-c .profile-top{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}
+.character-b .portrait{order:2}.character-b .profile-fields{order:1} .character-c .portrait{order:0}.character-c .profile-fields{order:0}
+.portrait{position:relative;display:flex;width:100%;min-width:0;min-height:320px;aspect-ratio:3/4;align-items:center;justify-content:center;overflow:hidden;border:1px solid var(--line);border-radius:6px;background:#f7f8fa;cursor:pointer}
+.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain!important;object-position:center}
+.portrait .placeholder{padding:12px;text-align:center;color:#9ba7b8;font-size:12px;line-height:1.8}
+.portrait .placeholder strong{display:block;font-size:28px;font-weight:400}
+.image-input{display:none}
+.profile-fields{display:flex;min-width:0;flex-direction:column;gap:4px}
+.field-row{display:grid;grid-template-columns:85px 1fr;min-height:34px;border:1px solid #e0e5ec;border-radius:5px;overflow:hidden}
+.field-row label{display:flex;align-items:center;padding:6px 8px;background:#f7f8fa;font-size:11px;font-weight:600}
+.field-row input{width:100%;min-width:0;padding:6px 8px;border:none;outline:none;background:white;color:var(--ink);font-size:11px}
+.field-row input::placeholder{color:#a5afbd}
+.section-box{margin-top:9px;padding:10px;border:1px solid #dfe4eb;border-radius:6px}
+.section-title{display:flex;align-items:center;gap:6px;margin-bottom:8px;font-size:12px;font-weight:700}
+.textarea{display:block;width:100%;min-height:62px;resize:vertical;padding:5px;border:none;outline:none;background:transparent;color:var(--ink);font-size:11px;line-height:1.8}
+.textarea::placeholder{color:#a2adbc}
+.double-box{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.list-area{min-height:115px}.list-area .textarea{min-height:90px}
+.relationship{display:flex;flex-direction:column;gap:9px;padding:14px}
+.center-heading{margin:0 0 3px;padding:7px 0 10px;border-bottom:1px solid var(--line);text-align:center;font-family:'Montserrat',sans-serif;font-size:17px;font-weight:700;letter-spacing:2px}
+.bond-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.bond-card{padding:10px;border:1px solid #dfe4ec;border-radius:6px;background:var(--soft)}
+.bond-card label{display:block;margin-bottom:9px;font-size:12px;font-weight:700}
+.bond-control{display:flex;align-items:center;gap:7px}
+.bond-control input[type=range]{width:100%;min-width:0;accent-color:var(--point)}
+.bond-value{font-size:11px;white-space:nowrap}
+
+.swatch{width:29px;height:29px;padding:0;overflow:hidden;border:1px solid #c9d1dd;border-radius:50%;background:white}
+.swatch input{width:42px;height:42px;margin:-7px;padding:0;border:none;cursor:pointer}
+.relationship .section-box{margin-top:0}.relationship .textarea{min-height:58px}
+.quote-box .textarea{min-height:76px;text-align:center;font-size:12px}
+.relationship .double-box .textarea{min-height:62px}
+.bottom-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:16px;align-items:start}
+.assets-panel{padding:12px}
+.asset-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;align-items:start}
+.asset-card{min-width:0;overflow:hidden;border:1px solid #dce2ea;border-radius:6px}
+.asset-title{padding:8px;background:var(--soft);font-size:11px;font-weight:700}
+.upload-box{position:relative;display:flex;min-height:170px;align-items:center;justify-content:center;overflow:hidden;padding:8px;background:white;cursor:pointer}
+.upload-box img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain!important;object-position:center;padding:8px}
+.upload-box .placeholder{color:#a0acbb;text-align:center;font-size:11px;line-height:1.8}
+.upload-box .placeholder strong{display:block;font-size:24px;font-weight:400}
+.asset-card .upload-box{height:220px;min-height:220px;background:#fafbfc}
+.extra-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;padding:6px}
+.extra-grid .upload-box{height:110px;min-height:110px;border:1px solid #e0e5ed;border-radius:5px}
+.extra-grid .placeholder{font-size:9px}.extra-grid .placeholder strong{font-size:20px}
+
+
+
+.palette-options label{display:inline-block;flex:0 0 27px;width:27px;height:27px;overflow:hidden;border:1px solid #d8dee7;border-radius:50%;background:#fff}
+.palette-options input{display:block;width:37px;height:37px;margin:-5px;padding:0;border:none;cursor:pointer}
+
+
+
+.hex-preview-row 
+.memo .textarea{min-height:100px}
+.nanagom-section{margin-top:16px;padding:14px;border:1px solid var(--line);border-radius:8px;background:white}
+.nanagom-heading{display:flex;align-items:center;gap:10px;margin-bottom:12px;padding:11px 13px;border-radius:6px;background:var(--soft)}
+.nanagom-heading strong{font-family:'Montserrat',sans-serif;font-size:14px;letter-spacing:1px}
+.nanagom-heading span{color:var(--muted);font-size:11px}
+.nanagom-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));justify-content:center;align-items:start;gap:16px}
+.nanagom-card{width:100%;min-width:0;overflow:hidden;border:1px solid #dce2ea;border-radius:8px}
+.nanagom-card .asset-title{display:flex;align-items:center;justify-content:space-between;padding:11px 14px;font-size:12px}
+.nanagom-card.a-nanagom .asset-title{border-left:4px solid var(--accent-a)}
+.nanagom-card.b-nanagom .asset-title{border-left:4px solid var(--accent-b)}
+.nanagom-card .asset-title small{color:var(--muted);font-size:10px;font-weight:400}
+.nanagom-upload{position:relative;display:flex;width:100%;height:auto;min-height:0;aspect-ratio:1/1;align-items:center;justify-content:center;overflow:hidden;padding:0;background:#fafbfc;cursor:pointer}
+.nanagom-upload img{position:absolute!important;inset:0;display:block;width:100%!important;height:100%!important;max-width:100%;max-height:100%;object-fit:contain!important;object-position:center;padding:0!important;margin:0}
+.nanagom-upload .placeholder{padding:16px;color:#9ba7b8;text-align:center;font-size:12px;line-height:2}
+.nanagom-upload .placeholder strong{display:block;margin-bottom:8px;font-size:40px;font-weight:400}
+.nanagom-note{padding:9px 12px;border-top:1px solid #e5e9ef;color:var(--muted);font-size:10px;line-height:1.7}
+.sheet-footer{margin-top:16px;padding-top:12px;border-top:1px solid var(--line);color:var(--muted);text-align:center;font-family:'Montserrat',sans-serif;font-size:9px;letter-spacing:3px}
+@media(max-width:800px){
+ .editor-settings{width:calc(100% - 20px)}
+ #sheet{width:1800px;max-width:none;margin:10px 0 30px;padding:24px}
+ .sheet-header{grid-template-columns:1fr 1.2fr 1fr;gap:15px}
+ .brand,.header-meta{text-align:initial}
+ .header-meta{justify-content:flex-end}
+ .main-title input{font-size:38px}
+ .top-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+ .bottom-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+ .panel{padding:12px}
+ .profile-top{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}
+ .character-b .profile-top{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)} .character-c .profile-top{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}
+ .portrait{min-height:320px}
+ .asset-card .upload-box{height:220px;min-height:220px}
+ .nanagom-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+ .nanagom-section{padding:8px}
+ .nanagom-heading{flex-wrap:wrap;gap:5px;padding:9px}
+ .nanagom-heading strong{font-size:11px}
+ .nanagom-heading span{font-size:9px}
+ .nanagom-card .asset-title{flex-wrap:wrap;gap:4px;padding:8px;font-size:10px}
+ .nanagom-card .asset-title small{font-size:8px}
+ .nanagom-upload .placeholder{padding:5px;font-size:10px}
+ .nanagom-upload .placeholder strong{font-size:28px}
+ .nanagom-note{padding:6px;font-size:9px}
+ .bond-grid-three{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .toolbar-title{width:100%;margin:0 0 4px;text-align:center}
+}
+@media print{body{background:white}.toolbar,.editor-settings{display:none!important}#sheet{width:1800px;max-width:none;margin:0;box-shadow:none}}
+
+/* Three-character layout */
+.relationship{margin-top:16px}
+.bond-grid-three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.character-c .letter{background:var(--point)}
+.bottom-grid .assets-panel{min-width:0}
+.bottom-grid .memo-panel{grid-column:1 / -1}
+.bottom-grid .memo-panel .section-box{margin-top:0}
+.bottom-grid .memo-panel .textarea{min-height:90px}
+.bottom-grid .upload-box,.nanagom-upload{aspect-ratio:1/1;height:auto;min-height:0;overflow:hidden}
+.bottom-grid .upload-box img,.nanagom-upload img,.portrait img{width:100%;height:100%;object-fit:contain;object-position:center}
+.nanagom-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:1000px){
+ #sheet{width:1800px}
+ .top-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .bottom-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .nanagom-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
 </style>
 </head>
 <body>
 <div class="toolbar">
-<button class="primary" onclick="saveData()">저장</button>
-<button onclick="loadData()">불러오기</button>
-<button onclick="exportJSON()">JSON 백업</button>
-<button onclick="document.getElementById('jsonImport').click()">JSON 불러오기</button>
-<input id="jsonImport" type="file" accept=".json,application/json" hidden onchange="importJSON(event)">
-<button onclick="exportPNG()">PNG 저장</button>
-<button onclick="window.print()">인쇄</button>
-<button onclick="resetAll()">초기화</button>
-<span class="status" id="status">PAIR ARCHIVE</span>
+ <span class="toolbar-title">PAIR MAKER</span>
+ <button class="primary" onclick="saveData()">저장하기</button>
+ <button onclick="loadData()">불러오기</button>
+ <button onclick="downloadPNG()">PNG 이미지 저장</button>
+ <button onclick="exportJSON()">백업 파일 저장</button>
+ <button onclick="document.getElementById('importFile').click()">백업 불러오기</button>
+ <button onclick="resetSheet()">초기화</button>
+ <input type="file" id="importFile" class="image-input" accept=".json,application/json">
+ <div class="status" id="status">작성한 내용은 저장 버튼을 눌러 저장할 수 있어요.</div>
 </div>
-<div class="page">
+<div class="editor-settings">
+ <h3>🎨 페어틀 디자인 설정</h3>
+ <div class="settings-row">
+  <label class="color-setting">전체 포인트 색상 <input type="color" data-theme="point" value="#8e9eb4"></label>
+  <label class="color-setting">A 대표 색상 <input type="color" data-theme="accent-a" value="#a9bfd4"></label>
+  <label class="color-setting">B 대표 색상 <input type="color" data-theme="accent-b" value="#c8b6d8"></label>
+  <label class="color-setting">배경 색상 <input type="color" data-theme="paper" value="#ffffff"></label>
+  <label class="color-setting">글자 색상 <input type="color" data-theme="ink" value="#354354"></label>
+ </div>
+ <div class="small-help">모든 입력란에 직접 글을 작성할 수 있어요. 이미지 칸을 누르면 그림을 업로드할 수 있습니다.<br>저장하기는 현재 브라우저에 저장하며, 백업 파일 저장은 다른 기기로 옮길 때 사용할 수 있어요.<br>이미지 칸에서 마우스 오른쪽 버튼을 누르면 업로드한 이미지를 삭제할 수 있습니다.</div>
+</div>
 <main id="sheet">
-<header class="header">
-<div>
-<div class="eyebrow">PAIR ARCHIVE / CREATIVE FILE</div>
-<h1>PAIR MAKER</h1>
-<div class="subtitle">A little archive for your favorite relationship.</div>
-</div>
-<div class="header-note">CHARACTER PROFILE<br>RELATIONSHIP NOTES<br>VISUAL MATERIALS</div>
+<header class="sheet-header">
+ <div class="brand">PAIR ARCHIVE<small>Two hearts, One story.</small></div>
+ <div class="main-title"><input data-save placeholder="PAIR NAME" value="PAIR NAME" aria-label="페어 이름"><textarea data-save placeholder="한 줄로 보는 우리의 관계성을 적어주세요." rows="1"></textarea></div>
+ <div class="header-meta"><label>No. <input data-save value="01"></label><label>DATE. <input data-save class="date" placeholder="YYYY.MM.DD"></label></div>
 </header>
-<section class="section editor-settings">
-<div class="section-head"><span class="section-no">00</span><span class="section-title">페어틀 디자인 설정</span><span class="section-sub">THEME CUSTOMIZATION</span></div>
-<div class="theme-grid">
-<div class="theme-item"><label for="themeBg">배경색</label><input id="themeBg" type="color" data-theme="bg" value="#f0f1f4"></div>
-<div class="theme-item"><label for="themePaper">페어틀 색</label><input id="themePaper" type="color" data-theme="paper" value="#ffffff"></div>
-<div class="theme-item"><label for="themeInk">글자색</label><input id="themeInk" type="color" data-theme="ink" value="#354354"></div>
-<div class="theme-item"><label for="themeLine">선 색</label><input id="themeLine" type="color" data-theme="line" value="#cbd3df"></div>
-<div class="theme-item"><label for="themeSoft">패널 색</label><input id="themeSoft" type="color" data-theme="soft" value="#f3f5f8"></div>
-<div class="theme-item"><label for="themePoint">포인트 색</label><input id="themePoint" type="color" data-theme="point" value="#8e9eb4"></div>
+<div class="top-grid">
+<section class="panel character-a">
+ <div class="panel-heading"><span class="letter">A</span>CHARACTER A</div>
+ <div class="profile-top">
+  <div class="portrait image-slot" data-image="a-main"><div class="placeholder"><strong>＋</strong>이미지<br>(대표 이미지)</div><input class="image-input" type="file" accept="image/*"></div>
+  <div class="profile-fields">
+   <div class="field-row"><label>이름</label><input data-save placeholder="이름을 입력하세요."></div>
+   <div class="field-row"><label>영문명</label><input data-save placeholder="Foreign name"></div>
+   <div class="field-row"><label>나이 /키/ 성별</label><input data-save placeholder="나이 /키/ 성별 입력"></div>
+   <div class="field-row"><label>생일</label><input data-save placeholder="생일 입력"></div>
+   <div class="field-row"><label>직업 / 신분</label><input data-save placeholder="직업 / 신분 입력"></div>
+   <div class="field-row"><label>소속</label><input data-save placeholder="소속 입력"></div>
+  </div>
+ </div>
+ <div class="section-box"><div class="section-title">☆ 한 줄 소개</div><textarea class="textarea" data-save placeholder="캐릭터에 대한 간단한 소개를 입력하세요."></textarea></div>
+ <div class="double-box">
+  <div class="section-box list-area"><div class="section-title">A의 성격</div><textarea class="textarea" data-save placeholder="• 성격 키워드&#10;•"></textarea></div>
+  <div class="section-box list-area"><div class="section-title">A의 능력 / 특기</div><textarea class="textarea" data-save placeholder="• 특기 / 능력&#10;•"></textarea></div>
+ </div>
+ <div class="section-box"><div class="section-title">A의 기타 정보</div><textarea class="textarea" data-save placeholder="추가 설정, 특징, 비밀 등"></textarea></div>
+</section>
+
+<section class="panel character-b">
+ <div class="panel-heading"><span class="letter">B</span>CHARACTER B</div>
+ <div class="profile-top">
+  <div class="portrait image-slot" data-image="b-main"><div class="placeholder"><strong>＋</strong>이미지<br>(대표 이미지)</div><input class="image-input" type="file" accept="image/*"></div>
+  <div class="profile-fields">
+   <div class="field-row"><label>이름</label><input data-save placeholder="이름을 입력하세요."></div>
+   <div class="field-row"><label>영문명</label><input data-save placeholder="Foreign name"></div>
+   <div class="field-row"><label>나이 /키/ 성별</label><input data-save placeholder="나이 /키/ 성별 입력"></div>
+   <div class="field-row"><label>생일</label><input data-save placeholder="생일 입력"></div>
+   <div class="field-row"><label>직업 / 신분</label><input data-save placeholder="직업 / 신분 입력"></div>
+   <div class="field-row"><label>소속</label><input data-save placeholder="소속 입력"></div>
+  </div>
+ </div>
+ <div class="section-box"><div class="section-title">☆ 한 줄 소개</div><textarea class="textarea" data-save placeholder="캐릭터에 대한 간단한 소개를 입력하세요."></textarea></div>
+ <div class="double-box">
+  <div class="section-box list-area"><div class="section-title">B의 성격</div><textarea class="textarea" data-save placeholder="• 성격 키워드&#10;•"></textarea></div>
+  <div class="section-box list-area"><div class="section-title">B의 능력 / 특기</div><textarea class="textarea" data-save placeholder="• 특기 / 능력&#10;•"></textarea></div>
+ </div>
+ <div class="section-box"><div class="section-title">B의 기타 정보</div><textarea class="textarea" data-save placeholder="추가 설정, 특징, 비밀 등"></textarea></div>
+</section>
+<section class="panel character-c">
+ <div class="panel-heading"><span class="letter">C</span>CHARACTER C</div>
+ <div class="profile-top">
+  <div class="portrait image-slot" data-image="c-main"><div class="placeholder"><strong>＋</strong>이미지<br>(대표 이미지)</div><input class="image-input" type="file" accept="image/*"></div>
+  <div class="profile-fields">
+   <div class="field-row"><label>이름</label><input data-save placeholder="이름을 입력하세요."></div>
+   <div class="field-row"><label>영문명</label><input data-save placeholder="Foreign name"></div>
+   <div class="field-row"><label>나이 /키/ 성별</label><input data-save placeholder="나이 /키/ 성별 입력"></div>
+   <div class="field-row"><label>생일</label><input data-save placeholder="생일 입력"></div>
+   <div class="field-row"><label>직업 / 신분</label><input data-save placeholder="직업 / 신분 입력"></div>
+   <div class="field-row"><label>소속</label><input data-save placeholder="소속 입력"></div>
+  </div>
+ </div>
+ <div class="section-box"><div class="section-title">☆ 한 줄 소개</div><textarea class="textarea" data-save placeholder="캐릭터에 대한 간단한 소개를 입력하세요."></textarea></div>
+ <div class="double-box">
+  <div class="section-box list-area"><div class="section-title">C의 성격</div><textarea class="textarea" data-save placeholder="• 성격 키워드&#10;•"></textarea></div>
+  <div class="section-box list-area"><div class="section-title">C의 능력 / 특기</div><textarea class="textarea" data-save placeholder="• 특기 / 능력&#10;•"></textarea></div>
+ </div>
+ <div class="section-box"><div class="section-title">C의 기타 정보</div><textarea class="textarea" data-save placeholder="추가 설정, 특징, 비밀 등"></textarea></div>
+</section>
 </div>
+<section class="panel relationship">
+ <h2 class="center-heading">RELATIONSHIP</h2>
+ 
+ <div class="bond-grid bond-grid-three">
+  <div class="bond-card"><label>A → B</label><div class="bond-control"><input type="range" min="0" max="100" value="0" data-bond="a-b"><span class="bond-value" data-value="a-b">0%</span></div></div>
+  <div class="bond-card"><label>B → A</label><div class="bond-control"><input type="range" min="0" max="100" value="0" data-bond="b-a"><span class="bond-value" data-value="b-a">0%</span></div></div>
+  <div class="bond-card"><label>A → C</label><div class="bond-control"><input type="range" min="0" max="100" value="0" data-bond="a-c"><span class="bond-value" data-value="a-c">0%</span></div></div>
+  <div class="bond-card"><label>C → A</label><div class="bond-control"><input type="range" min="0" max="100" value="0" data-bond="c-a"><span class="bond-value" data-value="c-a">0%</span></div></div>
+  <div class="bond-card"><label>B → C</label><div class="bond-control"><input type="range" min="0" max="100" value="0" data-bond="b-c"><span class="bond-value" data-value="b-c">0%</span></div></div>
+  <div class="bond-card"><label>C → B</label><div class="bond-control"><input type="range" min="0" max="100" value="0" data-bond="c-b"><span class="bond-value" data-value="c-b">0%</span></div></div>
+ </div>
+
+ <div class="section-box"><div class="section-title">☏ 서로를 부르는 호칭</div><div class="double-box">
+  <div><div style="font-size:11px;color:var(--muted);margin:4px">A → B</div><textarea class="textarea" data-save placeholder="A가 B를 부르는 호칭"></textarea></div>
+  <div><div style="font-size:11px;color:var(--muted);margin:4px">B → A</div><textarea class="textarea" data-save placeholder="B가 A를 부르는 호칭"></textarea></div>
+ </div></div>
+ <div class="double-box">
+  <div class="section-box"><div class="section-title">A의 첫인상</div><textarea class="textarea" data-save placeholder="A가 B를 처음 봤을 때의 느낌"></textarea></div>
+  <div class="section-box"><div class="section-title">B의 첫인상</div><textarea class="textarea" data-save placeholder="B가 A를 처음 봤을 때의 느낌"></textarea></div>
+ </div>
+ <div class="double-box">
+  <div class="section-box"><div class="section-title">A에게 하고 싶은 말</div><textarea class="textarea" data-save placeholder="A가 B에게 하고 싶은 말"></textarea></div>
+  <div class="section-box"><div class="section-title">B에게 하고 싶은 말</div><textarea class="textarea" data-save placeholder="B가 A에게 하고 싶은 말"></textarea></div>
+ </div>
+ <div class="section-box quote-box"><div class="section-title">♡ 관계성 한마디</div><textarea class="textarea" data-save placeholder="이 둘의 관계에 대한 한 줄을 적어주세요."></textarea></div>
+ <div class="section-box"><div class="section-title">관계 키워드</div><input class="hex-input" data-save placeholder="#키워드 1, #키워드 2, #키워드 3"></div>
 </section>
-<section class="section">
-<div class="section-head"><span class="section-no">01</span><span class="section-title">CHARACTER PROFILE</span><span class="section-sub">CHARACTER INFORMATION</span></div>
-<div class="profile-grid">
-<div class="profile-card">
-<div class="profile-top"><span class="profile-label">CHARACTER A</span><span class="profile-tag">PROFILE 01</span></div>
-<div class="profile-fields">
-<div class="field"><label>이름</label><input data-field="aName" placeholder="이름"></div>
-<div class="field"><label>나이</label><input data-field="aAge" placeholder="나이"></div>
-<div class="field"><label>성별 / 호칭</label><input data-field="aGender" placeholder="성별 / 호칭"></div>
-<div class="field"><label>키</label><input data-field="aHeight" placeholder="키"></div>
-<div class="field full"><label>외형</label><textarea data-field="aAppearance" placeholder="외형 특징"></textarea></div>
-<div class="field full"><label>성격</label><textarea data-field="aPersonality" placeholder="성격 및 특징"></textarea></div>
-<div class="field full"><label>기타 설정</label><textarea data-field="aEtc" placeholder="기타 설정"></textarea></div>
-</div></div>
-<div class="profile-card">
-<div class="profile-top"><span class="profile-label">CHARACTER B</span><span class="profile-tag">PROFILE 02</span></div>
-<div class="profile-fields">
-<div class="field"><label>이름</label><input data-field="bName" placeholder="이름"></div>
-<div class="field"><label>나이</label><input data-field="bAge" placeholder="나이"></div>
-<div class="field"><label>성별 / 호칭</label><input data-field="bGender" placeholder="성별 / 호칭"></div>
-<div class="field"><label>키</label><input data-field="bHeight" placeholder="키"></div>
-<div class="field full"><label>외형</label><textarea data-field="bAppearance" placeholder="외형 특징"></textarea></div>
-<div class="field full"><label>성격</label><textarea data-field="bPersonality" placeholder="성격 및 특징"></textarea></div>
-<div class="field full"><label>기타 설정</label><textarea data-field="bEtc" placeholder="기타 설정"></textarea></div>
-</div></div>
-<div class="profile-card">
-<div class="profile-top"><span class="profile-label">CHARACTER C</span><span class="profile-tag">PROFILE 03</span></div>
-<div class="profile-fields">
-<div class="field"><label>이름</label><input data-field="cName" placeholder="이름"></div>
-<div class="field"><label>나이</label><input data-field="cAge" placeholder="나이"></div>
-<div class="field"><label>성별 / 호칭</label><input data-field="cGender" placeholder="성별 / 호칭"></div>
-<div class="field"><label>키</label><input data-field="cHeight" placeholder="키"></div>
-<div class="field full"><label>외형</label><textarea data-field="cAppearance" placeholder="외형 특징"></textarea></div>
-<div class="field full"><label>성격</label><textarea data-field="cPersonality" placeholder="성격 및 특징"></textarea></div>
-<div class="field full"><label>기타 설정</label><textarea data-field="cEtc" placeholder="기타 설정"></textarea></div>
-</div></div>
+<div class="bottom-grid">
+<section class="panel assets-panel">
+ <div class="panel-heading">A의 SD / LD / 기타 자료</div>
+ <div class="asset-grid">
+  <div class="asset-card"><div class="asset-title">SD</div><div class="upload-box image-slot" data-image="a-sd"><div class="placeholder"><strong>＋</strong>SD 이미지</div><input class="image-input" type="file" accept="image/*"></div></div>
+  <div class="asset-card"><div class="asset-title">LD</div><div class="upload-box image-slot" data-image="a-ld"><div class="placeholder"><strong>＋</strong>LD 이미지</div><input class="image-input" type="file" accept="image/*"></div></div>
+ </div>
+ <div class="section-box"><div class="section-title">A의 기타 자료</div><div class="extra-grid">
+  <div class="upload-box image-slot" data-image="a-extra-1"><div class="placeholder"><strong>＋</strong>자료 1</div><input class="image-input" type="file" accept="image/*"></div>
+  <div class="upload-box image-slot" data-image="a-extra-2"><div class="placeholder"><strong>＋</strong>자료 2</div><input class="image-input" type="file" accept="image/*"></div>
+  <div class="upload-box image-slot" data-image="a-extra-3"><div class="placeholder"><strong>＋</strong>자료 3</div><input class="image-input" type="file" accept="image/*"></div>
+ </div></div>
+</section>
+<section class="panel assets-panel">
+ <div class="panel-heading">B의 SD / LD / 기타 자료</div>
+ <div class="asset-grid">
+  <div class="asset-card"><div class="asset-title">SD</div><div class="upload-box image-slot" data-image="b-sd"><div class="placeholder"><strong>＋</strong>SD 이미지</div><input class="image-input" type="file" accept="image/*"></div></div>
+  <div class="asset-card"><div class="asset-title">LD</div><div class="upload-box image-slot" data-image="b-ld"><div class="placeholder"><strong>＋</strong>LD 이미지</div><input class="image-input" type="file" accept="image/*"></div></div>
+ </div>
+ <div class="section-box"><div class="section-title">B의 기타 자료</div><div class="extra-grid">
+  <div class="upload-box image-slot" data-image="b-extra-1"><div class="placeholder"><strong>＋</strong>자료 1</div><input class="image-input" type="file" accept="image/*"></div>
+  <div class="upload-box image-slot" data-image="b-extra-2"><div class="placeholder"><strong>＋</strong>자료 2</div><input class="image-input" type="file" accept="image/*"></div>
+  <div class="upload-box image-slot" data-image="b-extra-3"><div class="placeholder"><strong>＋</strong>자료 3</div><input class="image-input" type="file" accept="image/*"></div>
+ </div></div>
+</section>
+<section class="panel assets-panel">
+ <div class="panel-heading">C의 SD / LD / 기타 자료</div>
+ <div class="asset-grid">
+  <div class="asset-card"><div class="asset-title">SD</div><div class="upload-box image-slot" data-image="c-sd"><div class="placeholder"><strong>＋</strong>SD 이미지</div><input class="image-input" type="file" accept="image/*"></div></div>
+  <div class="asset-card"><div class="asset-title">LD</div><div class="upload-box image-slot" data-image="c-ld"><div class="placeholder"><strong>＋</strong>LD 이미지</div><input class="image-input" type="file" accept="image/*"></div></div>
+ </div>
+ <div class="section-box"><div class="section-title">C의 기타 자료</div><div class="extra-grid">
+  <div class="upload-box image-slot" data-image="c-extra-1"><div class="placeholder"><strong>＋</strong>자료 1</div><input class="image-input" type="file" accept="image/*"></div>
+  <div class="upload-box image-slot" data-image="c-extra-2"><div class="placeholder"><strong>＋</strong>자료 2</div><input class="image-input" type="file" accept="image/*"></div>
+  <div class="upload-box image-slot" data-image="c-extra-3"><div class="placeholder"><strong>＋</strong>자료 3</div><input class="image-input" type="file" accept="image/*"></div>
+ </div></div>
+</section>
+<section class="panel assets-panel memo-panel">
+ <div class="section-box memo"><div class="section-title">✎ 추가 메모</div><textarea class="textarea" data-save placeholder="세계관, 관계성 보충 설명, 기타 메모 등을 자유롭게 작성하세요."></textarea></div>
+</section>
 </div>
+<section class="nanagom-section">
+ <div class="nanagom-heading"><strong>NANAGOM MD</strong><span>자료 — A, B, C를 가로로 나란히 배치합니다.</span></div>
+ <div class="nanagom-grid">
+  <div class="nanagom-card a-nanagom"><div class="asset-title"><span>A의 나나곰</span><small>FULL-BODY MD</small></div><div class="nanagom-upload image-slot" data-image="a-nanagom"><div class="placeholder"><strong>＋</strong>A의 나나곰<br>클릭해서 이미지를 업로드하세요.<br>전신이 잘 보이도록 큰 이미지 칸을 준비했어요.</div><input class="image-input" type="file" accept="image/*"></div><div class="nanagom-note">A 캐릭터의 나나곰 이미지를 넣는 공간입니다.</div></div>
+  <div class="nanagom-card b-nanagom"><div class="asset-title"><span>B의 나나곰</span><small>FULL-BODY MD</small></div><div class="nanagom-upload image-slot" data-image="b-nanagom"><div class="placeholder"><strong>＋</strong>B의 나나곰 이미지<br>클릭해서 이미지를 업로드하세요.<br>전신이 잘 보이도록 큰 이미지 칸을 준비했어요.</div><input class="image-input" type="file" accept="image/*"></div><div class="nanagom-note">B 캐릭터의 나나곰 이미지를 넣는 공간입니다.</div></div>
+   <div class="nanagom-card c-nanagom"><div class="asset-title"><span>C의 나나곰</span><small>FULL-BODY MD</small></div><div class="nanagom-upload image-slot" data-image="c-nanagom"><div class="placeholder"><strong>＋</strong>C의 나나곰<br>클릭해서 이미지를 업로드하세요.<br>이미지 비율을 유지해 표시합니다.</div><input class="image-input" type="file" accept="image/*"></div><div class="nanagom-note">C 캐릭터의 나나곰 이미지를 넣는 공간입니다.</div></div>
+ </div>
 </section>
-<section class="section">
-<div class="section-head"><span class="section-no">02</span><span class="section-title">MATERIAL ARCHIVE</span><span class="section-sub">SD / LD / EXTRA</span></div>
-<div class="material-grid">
-<div class="material-card">
-<div class="material-head"><strong>CHARACTER A</strong><span>IMAGE MATERIALS</span></div>
-<div class="material-body"><div class="material-slots">
-<div class="material-slot"><div class="slot-title">SD 이미지</div><div class="image-box" data-image-box="aSd"><div class="image-placeholder"><strong>＋</strong>SD 이미지</div></div><input class="image-input" type="file" accept="image/*" data-image-input="aSd"><div class="slot-actions"><button class="small-button" onclick="removeImage('aSd')">이미지 삭제</button></div></div>
-<div class="material-slot"><div class="slot-title">LD 이미지</div><div class="image-box" data-image-box="aLd"><div class="image-placeholder"><strong>＋</strong>LD 이미지</div></div><input class="image-input" type="file" accept="image/*" data-image-input="aLd"><div class="slot-actions"><button class="small-button" onclick="removeImage('aLd')">이미지 삭제</button></div></div>
-<div class="material-slot"><div class="slot-title">추가 자료</div><div class="image-box" data-image-box="aExtra"><div class="image-placeholder"><strong>＋</strong>추가 자료</div></div><input class="image-input" type="file" accept="image/*" data-image-input="aExtra"><div class="slot-actions"><button class="small-button" onclick="removeImage('aExtra')">이미지 삭제</button></div></div>
-</div></div></div>
-<div class="material-card">
-<div class="material-head"><strong>CHARACTER B</strong><span>IMAGE MATERIALS</span></div>
-<div class="material-body"><div class="material-slots">
-<div class="material-slot"><div class="slot-title">SD 이미지</div><div class="image-box" data-image-box="bSd"><div class="image-placeholder"><strong>＋</strong>SD 이미지</div></div><input class="image-input" type="file" accept="image/*" data-image-input="bSd"><div class="slot-actions"><button class="small-button" onclick="removeImage('bSd')">이미지 삭제</button></div></div>
-<div class="material-slot"><div class="slot-title">LD 이미지</div><div class="image-box" data-image-box="bLd"><div class="image-placeholder"><strong>＋</strong>LD 이미지</div></div><input class="image-input" type="file" accept="image/*" data-image-input="bLd"><div class="slot-actions"><button class="small-button" onclick="removeImage('bLd')">이미지 삭제</button></div></div>
-<div class="material-slot"><div class="slot-title">추가 자료</div><div class="image-box" data-image-box="bExtra"><div class="image-placeholder"><strong>＋</strong>추가 자료</div></div><input class="image-input" type="file" accept="image/*" data-image-input="bExtra"><div class="slot-actions"><button class="small-button" onclick="removeImage('bExtra')">이미지 삭제</button></div></div>
-</div></div></div>
-<div class="material-card">
-<div class="material-head"><strong>CHARACTER C</strong><span>IMAGE MATERIALS</span></div>
-<div class="material-body"><div class="material-slots">
-<div class="material-slot"><div class="slot-title">SD 이미지</div><div class="image-box" data-image-box="cSd"><div class="image-placeholder"><strong>＋</strong>SD 이미지</div></div><input class="image-input" type="file" accept="image/*" data-image-input="cSd"><div class="slot-actions"><button class="small-button" onclick="removeImage('cSd')">이미지 삭제</button></div></div>
-<div class="material-slot"><div class="slot-title">LD 이미지</div><div class="image-box" data-image-box="cLd"><div class="image-placeholder"><strong>＋</strong>LD 이미지</div></div><input class="image-input" type="file" accept="image/*" data-image-input="cLd"><div class="slot-actions"><button class="small-button" onclick="removeImage('cLd')">이미지 삭제</button></div></div>
-<div class="material-slot"><div class="slot-title">추가 자료</div><div class="image-box" data-image-box="cExtra"><div class="image-placeholder"><strong>＋</strong>추가 자료</div></div><input class="image-input" type="file" accept="image/*" data-image-input="cExtra"><div class="slot-actions"><button class="small-button" onclick="removeImage('cExtra')">이미지 삭제</button></div></div>
-</div></div></div>
-</div>
-</section>
-<section class="section">
-<div class="section-head"><span class="section-no">03</span><span class="section-title">NANAGOM ARCHIVE</span><span class="section-sub">CHARACTER A / B / C</span></div>
-<div class="nanagom-grid">
-<div class="nanagom-card"><div class="nanagom-head"><strong>CHARACTER A</strong><span class="profile-tag">NANAGOM</span></div><div class="nanagom-pair">
-<div class="material-slot"><div class="slot-title">A 자료 01</div><div class="image-box" data-image-box="aNana1"><div class="image-placeholder"><strong>＋</strong>자료 01</div></div><input class="image-input" type="file" accept="image/*" data-image-input="aNana1"><div class="slot-actions"><button class="small-button" onclick="removeImage('aNana1')">이미지 삭제</button></div></div>
-<div class="material-slot"><div class="slot-title">A 자료 02</div><div class="image-box" data-image-box="aNana2"><div class="image-placeholder"><strong>＋</strong>자료 02</div></div><input class="image-input" type="file" accept="image/*" data-image-input="aNana2"><div class="slot-actions"><button class="small-button" onclick="removeImage('aNana2')">이미지 삭제</button></div></div>
-</div></div>
-<div class="nanagom-card"><div class="nanagom-head"><strong>CHARACTER B</strong><span class="profile-tag">NANAGOM</span></div><div class="nanagom-pair">
-<div class="material-slot"><div class="slot-title">B 자료 01</div><div class="image-box" data-image-box="bNana1"><div class="image-placeholder"><strong>＋</strong>자료 01</div></div><input class="image-input" type="file" accept="image/*" data-image-input="bNana1"><div class="slot-actions"><button class="small-button" onclick="removeImage('bNana1')">이미지 삭제</button></div></div>
-<div class="material-slot"><div class="slot-title">B 자료 02</div><div class="image-box" data-image-box="bNana2"><div class="image-placeholder"><strong>＋</strong>자료 02</div></div><input class="image-input" type="file" accept="image/*" data-image-input="bNana2"><div class="slot-actions"><button class="small-button" onclick="removeImage('bNana2')">이미지 삭제</button></div></div>
-</div></div>
-<div class="nanagom-card"><div class="nanagom-head"><strong>CHARACTER C</strong><span class="profile-tag">NANAGOM</span></div><div class="nanagom-pair">
-<div class="material-slot"><div class="slot-title">C 자료 01</div><div class="image-box" data-image-box="cNana1"><div class="image-placeholder"><strong>＋</strong>자료 01</div></div><input class="image-input" type="file" accept="image/*" data-image-input="cNana1"><div class="slot-actions"><button class="small-button" onclick="removeImage('cNana1')">이미지 삭제</button></div></div>
-<div class="material-slot"><div class="slot-title">C 자료 02</div><div class="image-box" data-image-box="cNana2"><div class="image-placeholder"><strong>＋</strong>자료 02</div></div><input class="image-input" type="file" accept="image/*" data-image-input="cNana2"><div class="slot-actions"><button class="small-button" onclick="removeImage('cNana2')">이미지 삭제</button></div></div>
-</div></div>
-</div>
-</section>
-<section class="section">
-<div class="section-head"><span class="section-no">04</span><span class="section-title">RELATIONSHIP METER</span><span class="section-sub">BOND / DYNAMIC</span></div>
-<div class="bond-grid">
-<div class="bond-card"><div class="bond-title">A ↔ B</div><div class="bond-row"><input type="range" min="0" max="100" value="50" data-bond="ab" oninput="updateBond(this)"><span class="bond-value" data-bond-value="ab">50</span></div></div>
-<div class="bond-card"><div class="bond-title">A ↔ C</div><div class="bond-row"><input type="range" min="0" max="100" value="50" data-bond="ac" oninput="updateBond(this)"><span class="bond-value" data-bond-value="ac">50</span></div></div>
-<div class="bond-card"><div class="bond-title">B ↔ C</div><div class="bond-row"><input type="range" min="0" max="100" value="50" data-bond="bc" oninput="updateBond(this)"><span class="bond-value" data-bond-value="bc">50</span></div></div>
-</div>
-</section>
-<section class="section">
-<div class="section-head"><span class="section-no">05</span><span class="section-title">PAIR NOTES</span><span class="section-sub">MEMO / STORY / DYNAMIC</span></div>
-<textarea class="notes-box" data-field="pairNotes" placeholder="페어의 관계, 서사, 좋아하는 점 등을 자유롭게 적어 주세요."></textarea>
-</section>
-<div class="footer"><span>PAIR ARCHIVE — PAIR MAKER</span><span>MADE WITH LOVE</span></div>
+<footer class="sheet-footer">PAIR ARCHIVE — OC &amp; DREAM PAIR</footer>
 </main>
-</div>
 <script>
-const STORAGE_KEY='pairArchiveMaker_v3';
-const IMAGE_KEYS=['aSd','aLd','aExtra','bSd','bLd','bExtra','cSd','cLd','cExtra','aNana1','aNana2','bNana1','bNana2','cNana1','cNana2'];
-let images={};
-function setStatus(message){const el=document.getElementById('status');if(el)el.textContent=message}
-function getFields(){const data={};document.querySelectorAll('[data-field]').forEach(el=>data[el.dataset.field]=el.value);return data}
-function applyFields(data={}){document.querySelectorAll('[data-field]').forEach(el=>{el.value=data[el.dataset.field]??''})}
-function updateBond(input){const key=input.dataset.bond;const value=document.querySelector(`[data-bond-value="${key}"]`);if(value)value.textContent=input.value}
-function applyImages(data={}){images={...data};IMAGE_KEYS.forEach(key=>{const box=document.querySelector(`[data-image-box="${key}"]`);if(!box)return;box.innerHTML='';if(images[key]){const img=document.createElement('img');img.src=images[key];img.alt=key;box.appendChild(img)}else{const placeholder=document.createElement('div');placeholder.className='image-placeholder';placeholder.innerHTML='<strong>＋</strong>'+key;box.appendChild(placeholder)}})}
-function removeImage(key){delete images[key];applyImages(images);const input=document.querySelector(`[data-image-input="${key}"]`);if(input)input.value='';setStatus('이미지를 삭제했어요.')}
-document.querySelectorAll('[data-image-input]').forEach(input=>input.addEventListener('change',event=>{const file=event.target.files&&event.target.files[0];if(!file)return;const reader=new FileReader();reader.onload=()=>{images[input.dataset.imageInput]=reader.result;applyImages(images);setStatus('이미지를 추가했어요!')};reader.readAsDataURL(file)}));
-function saveData(){const data={fields:getFields(),images,theme:{},bonds:{}};document.querySelectorAll('[data-theme]').forEach(el=>data.theme[el.dataset.theme]=el.value);document.querySelectorAll('[data-bond]').forEach(el=>data.bonds[el.dataset.bond]=el.value);try{localStorage.setItem(STORAGE_KEY,JSON.stringify(data));setStatus('저장 완료!')}catch(e){setStatus('저장 공간이 부족해요. JSON 백업을 이용해 주세요.');alert('이미지가 많으면 브라우저 저장 공간이 부족할 수 있어요. JSON 백업을 이용해 주세요.')}} 
-function loadData(){const raw=localStorage.getItem(STORAGE_KEY);if(!raw){setStatus('저장된 데이터가 없어요.');return}try{const data=JSON.parse(raw);applyFields(data.fields||{});applyImages(data.images||{});document.querySelectorAll('[data-theme]').forEach(el=>{if(data.theme&&data.theme[el.dataset.theme]){el.value=data.theme[el.dataset.theme];document.documentElement.style.setProperty('--'+el.dataset.theme,el.value)}});document.querySelectorAll('[data-bond]').forEach(el=>{if(data.bonds&&data.bonds[el.dataset.bond]!=null){el.value=data.bonds[el.dataset.bond];updateBond(el)}});setStatus('불러오기 완료!')}catch(e){setStatus('데이터를 불러오지 못했어요.')}} 
-function exportJSON(){const data={fields:getFields(),images,theme:{},bonds:{}};document.querySelectorAll('[data-theme]').forEach(el=>data.theme[el.dataset.theme]=el.value);document.querySelectorAll('[data-bond]').forEach(el=>data.bonds[el.dataset.bond]=el.value);downloadFile(JSON.stringify(data,null,2),'pair-archive-backup.json','application/json');setStatus('JSON 백업 완료!')}
-function importJSON(event){const file=event.target.files&&event.target.files[0];if(!file)return;const reader=new FileReader();reader.onload=()=>{try{const data=JSON.parse(reader.result);applyFields(data.fields||{});applyImages(data.images||{});document.querySelectorAll('[data-theme]').forEach(el=>{if(data.theme&&data.theme[el.dataset.theme]){el.value=data.theme[el.dataset.theme];document.documentElement.style.setProperty('--'+el.dataset.theme,el.value)}});document.querySelectorAll('[data-bond]').forEach(el=>{if(data.bonds&&data.bonds[el.dataset.bond]!=null){el.value=data.bonds[el.dataset.bond];updateBond(el)}});saveData();setStatus('JSON 불러오기 완료!')}catch(e){alert('JSON 파일을 읽지 못했어요.')}};reader.readAsText(file);event.target.value=''}
-function downloadFile(content,name,type){const blob=new Blob([content],{type});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url)}
-async function exportPNG(){if(typeof html2canvas==='undefined'){alert('PNG 저장 라이브러리를 불러오지 못했어요. 인터넷 연결을 확인해 주세요.');return}setStatus('PNG를 만드는 중...');try{const canvas=await html2canvas(document.getElementById('sheet'),{scale:1,backgroundColor:'#ffffff',useCORS:true});canvas.toBlob(blob=>{if(!blob){setStatus('PNG 저장 실패');return}const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='pair-archive.png';a.click();URL.revokeObjectURL(url);setStatus('PNG 저장 완료!')},'image/png')}catch(e){console.error(e);setStatus('PNG 저장에 실패했어요.')}} 
-function resetAll(){if(!confirm('모든 입력과 이미지를 초기화할까요?'))return;document.querySelectorAll('[data-field]').forEach(el=>el.value='');document.querySelectorAll('[data-theme]').forEach(el=>{el.value=el.defaultValue;document.documentElement.style.setProperty('--'+el.dataset.theme,el.value)});document.querySelectorAll('[data-bond]').forEach(el=>{el.value=50;updateBond(el)});applyImages({});localStorage.removeItem(STORAGE_KEY);setStatus('초기화했어요!')}
+const sheet=document.getElementById('sheet');
+const statusText=document.getElementById('status');
+const STORAGE_KEY='pairMakerProject_v1';
+let imageData={};
+function setStatus(message){statusText.textContent=message}
+function getFormData(){return [...document.querySelectorAll('[data-save]')].map((el,index)=>({index,value:el.value}))}
+function getThemeData(){const result={};document.querySelectorAll('[data-theme]').forEach(input=>result[input.dataset.theme]=input.value);return result}
+function getBondData(){return [...document.querySelectorAll('[data-bond]')].map(input=>({key:input.dataset.bond,value:input.value}))}
+function getProjectData(){return {version:3,fields:getFormData(),theme:getThemeData(),bonds:getBondData(),images:imageData}}
+function applyTheme(theme){if(!theme)return;Object.entries(theme).forEach(([key,value])=>{document.documentElement.style.setProperty('--'+key,value);const input=document.querySelector('[data-theme="'+key+'"]');if(input)input.value=value})}
+function applyBonds(bonds){if(!bonds)return;bonds.forEach(item=>{const input=document.querySelector('[data-bond="'+item.key+'"]');if(input){input.value=item.value;updateBond(input)}})}
+function applyFields(fields){if(!fields)return;const inputs=[...document.querySelectorAll('[data-save]')];fields.forEach(item=>{if(inputs[item.index])inputs[item.index].value=item.value})}
+function updateHexPreview(group,value){
+ const preview=document.getElementById(group+'-hex-preview');
+ if(!preview)return;
+ const clean=(value||'').trim();
+ if(/^#([0-9a-f]{3}|[0-9a-f]{6})$/i.test(clean)){preview.style.background=clean;preview.title=clean.toUpperCase()}
+ else{preview.style.background='repeating-conic-gradient(#ddd 0% 25%, white 0% 50%) 50% / 10px 10px';preview.title='올바른 HEX 색상 코드를 입력해 주세요.'}
+}
+function syncHexToPicker(group,value){
+ if(!/^#([0-9a-f]{3}|[0-9a-f]{6})$/i.test((value||'').trim()))return;
+ const picker=document.querySelector('[data-char-color="'+group+'"]');
+ if(picker)picker.value=value.trim();
+ updateHexPreview(group,value);
+}
+function showImage(slot,src){
+ const box=document.querySelector('[data-image="'+slot+'"]');if(!box)return;
+ const oldImage=box.querySelector('img');if(oldImage)oldImage.remove();
+ const placeholder=box.querySelector('.placeholder');
+ if(src){const img=document.createElement('img');img.src=src;img.alt='업로드 이미지';if(placeholder)placeholder.style.display='none';box.insertBefore(img,box.querySelector('.image-input'))}
+ else if(placeholder)placeholder.style.display='';
+}
+function applyImages(images){imageData=images||{};document.querySelectorAll('[data-image]').forEach(box=>showImage(box.dataset.image,imageData[box.dataset.image]||''))}
+function saveData(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(getProjectData()));setStatus('저장 완료! 이 브라우저에서 다시 불러올 수 있어요.')}catch(error){setStatus('저장 공간이 부족해요. 백업 파일 저장을 이용해 주세요.')}}
+function loadData(){try{const raw=localStorage.getItem(STORAGE_KEY);if(!raw){setStatus('저장된 내용이 없어요. 먼저 작성하고 저장해 주세요.');return}const data=JSON.parse(raw);applyFields(data.fields);applyTheme(data.theme);applyBonds(data.bonds);applyImages(data.images);document.querySelectorAll('[data-hex-group]').forEach(input=>updateHexPreview(input.dataset.hexGroup,input.value));setStatus('저장한 페어틀을 불러왔어요!')}catch(error){setStatus('불러오기에 실패했어요.')}}
+function exportJSON(){try{const blob=new Blob([JSON.stringify(getProjectData())],{type:'application/json'});const url=URL.createObjectURL(blob);const link=document.createElement('a');link.href=url;link.download='pair-archive-backup.json';document.body.appendChild(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);setStatus('백업 파일을 다운로드했어요!')}catch(error){setStatus('백업 파일을 만들지 못했어요.')}}
+function importJSON(file){const reader=new FileReader();reader.onload=()=>{try{const data=JSON.parse(reader.result);applyFields(data.fields);applyTheme(data.theme);applyBonds(data.bonds);applyImages(data.images);document.querySelectorAll('[data-hex-group]').forEach(input=>updateHexPreview(input.dataset.hexGroup,input.value));saveData();setStatus('백업 파일을 불러왔어요!')}catch(error){setStatus('올바른 백업 파일이 아니에요.')}};reader.onerror=()=>setStatus('파일을 읽을 수 없어요.');reader.readAsText(file)}
+document.getElementById('importFile').addEventListener('change',event=>{const file=event.target.files[0];if(file)importJSON(file);event.target.value=''});
+document.querySelectorAll('.image-slot').forEach(box=>{
+ const input=box.querySelector('.image-input');if(!input)return;
+ box.addEventListener('click',event=>{if(event.target===input)return;input.click()});
+ input.addEventListener('change',event=>{
+  const file=event.target.files[0];if(!file)return;
+  if(!file.type.startsWith('image/')){setStatus('이미지 파일을 선택해 주세요.');return}
+  const reader=new FileReader();reader.onload=()=>{imageData[box.dataset.image]=reader.result;showImage(box.dataset.image,reader.result);setStatus('이미지를 추가했어요. 저장 버튼을 눌러 저장해 주세요.')};
+  reader.onerror=()=>setStatus('이미지를 읽을 수 없어요. 다른 파일로 시도해 주세요.');
+  reader.readAsDataURL(file);event.target.value='';
+ });
+ box.addEventListener('contextmenu',event=>{event.preventDefault();if(imageData[box.dataset.image]&&confirm('이 이미지를 삭제할까요?')){delete imageData[box.dataset.image];showImage(box.dataset.image,'');setStatus('이미지를 삭제했어요. 저장 버튼을 누르면 변경 사항이 저장돼요.')}});
+});
+document.querySelectorAll('[data-theme]').forEach(input=>input.addEventListener('input',()=>document.documentElement.style.setProperty('--'+input.dataset.theme,input.value)));
+document.querySelectorAll('[data-char-color]').forEach(input=>input.addEventListener('input',()=>{
+ const group=input.dataset.charColor;
+ const hex=document.querySelector('[data-hex-group="'+group+'"]');
+ if(hex)hex.value=input.value;
+ updateHexPreview(group,input.value);
+}));
+document.querySelectorAll('[data-hex-group]').forEach(input=>{
+ input.addEventListener('input',()=>syncHexToPicker(input.dataset.hexGroup,input.value));
+ input.addEventListener('change',()=>{if(/^#([0-9a-f]{3}|[0-9a-f]{6})$/i.test(input.value.trim()))input.value=input.value.trim().toLowerCase();updateHexPreview(input.dataset.hexGroup,input.value)});
+ updateHexPreview(input.dataset.hexGroup,input.value);
+});
+function updateBond(input){const output=document.querySelector('[data-value="'+input.dataset.bond+'"]');if(output)output.textContent=input.value+'%'}
+document.querySelectorAll('[data-bond]').forEach(input=>{input.addEventListener('input',()=>updateBond(input));updateBond(input)});
+async function downloadPNG(){
+ if(typeof html2canvas==='undefined'){setStatus('이미지 저장 기능을 불러오지 못했어요. 인터넷 연결을 확인해 주세요.');return}
+ setStatus('페어틀 이미지를 만드는 중이에요...');
+ try{
+  const canvas=await html2canvas(sheet,{scale:2,backgroundColor:getComputedStyle(sheet).backgroundColor,useCORS:true,logging:false,width:sheet.scrollWidth,height:sheet.scrollHeight,windowWidth:Math.max(document.documentElement.clientWidth,sheet.scrollWidth),windowHeight:Math.max(document.documentElement.clientHeight,sheet.scrollHeight)});
+  const link=document.createElement('a');link.download='pair-archive.png';link.href=canvas.toDataURL('image/png');document.body.appendChild(link);link.click();link.remove();setStatus('완성된 페어틀을 PNG로 저장했어요!');
+ }catch(error){console.error(error);setStatus('이미지 저장에 실패했어요. 페이지를 새로고침한 뒤 다시 시도해 주세요.')}
+}
+function resetSheet(){
+ if(!confirm('현재 작성한 모든 내용과 이미지를 초기화할까요?'))return;
+ localStorage.removeItem(STORAGE_KEY);imageData={};
+ document.querySelectorAll('[data-save]').forEach(el=>el.value=el.defaultValue||'');
+ document.querySelectorAll('[data-theme]').forEach(input=>{input.value=input.defaultValue;document.documentElement.style.setProperty('--'+input.dataset.theme,input.value)});
+ document.querySelectorAll('[data-bond]').forEach(input=>{input.value=0;updateBond(input)});
+ applyImages({});
+ document.querySelectorAll('[data-hex-group]').forEach(input=>updateHexPreview(input.dataset.hexGroup,input.value));
+ setStatus('초기화했어요!');
+}
 document.addEventListener('keydown',event=>{if((event.ctrlKey||event.metaKey)&&event.key.toLowerCase()==='s'){event.preventDefault();saveData()}});
 window.addEventListener('load',()=>{if(localStorage.getItem(STORAGE_KEY))loadData()});
 </script>
